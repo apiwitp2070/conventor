@@ -30,12 +30,15 @@ bun install
 bun dev
 ```
 
-## 📌 Usage
+## Usage
 1. Choose the desired case format.
 2. Enter the text you want to convert.
 3. Copy converted result from copy button.
 4. You can swap input and output convention type anytime.
 
+
+## Known Issues
+- Dark mode button not display properly on production (should working fine in development).
 
 ## License
 MIT License.
