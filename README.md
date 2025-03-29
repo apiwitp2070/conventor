@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# Conventor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Conventor is a simple and efficient tool for converting one or more text between different variable naming conventions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Supports Following Naming Conventions:**
+  - kebab-case
+  - camelCase
+  - PascalCase
+  - snake_case
+  - SCREAMING_SNAKE_CASE
+  - dot.case
+- Real-time updates as you type.
+- Convert multiple words at once. One line per name.
 
-## Expanding the ESLint configuration
+## Installation (For Developers)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+If you want to run Conventor locally, follow these steps:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+# Clone this repository
+git clone https://github.com/apiwitp2070/conventor.git
+cd conventor
+
+# Install dependencies
+bun install
+
+# Start the development server
+bun dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📌 Usage
+1. Choose the desired case format.
+2. Enter the text you want to convert.
+3. Copy converted result from copy button.
+4. You can swap input and output convention type anytime.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## License
+MIT License.
