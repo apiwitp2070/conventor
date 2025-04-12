@@ -3,6 +3,7 @@ import { useTheme } from "./theme-provider";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
+
   return (
     <header className="fixed z-10 w-full px-6 py-4 bg-background shadow dark:border-b dark:border-foreground/50">
       <div className="container mx-auto flex justify-between items-center ">
@@ -12,12 +13,8 @@ export function Header() {
             className="cursor-pointer"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
-            {theme === "dark" && (
-              <MoonIcon size={20} className="text-foreground" />
-            )}
-            {theme === "light" && (
-              <SunIcon size={20} className="text-foreground" />
-            )}
+            <MoonIcon size={20} className="hidden dark:block text-foreground" />
+            <SunIcon size={20} className="dark:hidden text-foreground" />
           </div>
         </div>
       </div>
