@@ -11,13 +11,13 @@ export function Header() {
         <div className="flex items-center gap-6">
           <div
             className="cursor-pointer hidden dark:block"
-            onClick={() => setTheme("dark")}
+            onClick={() => setTheme("light")}
           >
             <MoonIcon size={20} className="text-foreground" />
           </div>
           <div
             className="cursor-pointer dark:hidden"
-            onClick={() => setTheme("light")}
+            onClick={() => setTheme("dark")}
           >
             <SunIcon size={20} className="text-foreground" />
           </div>
