@@ -2,7 +2,7 @@ import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "./theme-provider";
 
 export function Header() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   return (
     <header className="fixed z-10 w-full px-6 py-4 bg-background shadow dark:border-b dark:border-foreground/50">
@@ -10,11 +10,16 @@ export function Header() {
         <img src="/favicon.ico" width={40} height={40} />
         <div className="flex items-center gap-6">
           <div
-            className="cursor-pointer"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="cursor-pointer hidden dark:block"
+            onClick={() => setTheme("dark")}
           >
-            <MoonIcon size={20} className="hidden dark:block text-foreground" />
-            <SunIcon size={20} className="dark:hidden text-foreground" />
+            <MoonIcon size={20} className="text-foreground" />
+          </div>
+          <div
+            className="cursor-pointer dark:hidden"
+            onClick={() => setTheme("light")}
+          >
+            <SunIcon size={20} className="text-foreground" />
           </div>
         </div>
       </div>
