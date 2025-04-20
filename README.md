@@ -37,8 +37,5 @@ bun dev
 4. You can swap input and output convention type anytime.
 
 
-## Known Issues
-- Dark mode button not display properly on production (should working fine in development).
-
 ## License
 MIT License.
