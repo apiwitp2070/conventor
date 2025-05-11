@@ -1,4 +1,5 @@
 export enum NamingType {
+  AUTO = "AUTO",
   DOT = "DOT",
   KEBAB = "KEBAB",
   PASCAL = "PASCAL",

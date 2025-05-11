@@ -1,5 +1,15 @@
 import { NamingType } from "@/enums/naming-type.enum";
 
+export function autoConvert(input: string, to: NamingType): string {
+  if (!input) return "";
+
+  const separator = getSeparator(to);
+
+  if (!separator) return "";
+
+  return input.replace(/[^a-zA-Z0-9]+/g, separator);
+}
+
 export function getSplittedInputs(input: string, from: NamingType) {
   switch (from) {
     case NamingType.KEBAB:
@@ -71,8 +81,23 @@ export function autoFormatInput(from: NamingType, input: string) {
 
 // helper
 
-const splitCamelStr = (str: string) => {
+function splitCamelStr(str: string) {
   return str
     .split(/(?=[A-Z])/)
     .flatMap((part) => (/^[A-Z]{2,}$/.test(part) ? part.split("") : [part]));
-};
+}
+
+function getSeparator(type: NamingType) {
+  switch (type) {
+    case NamingType.KEBAB:
+      return "-";
+    case NamingType.SNAKE:
+      return "_";
+    case NamingType.SCREAMING_SNAKE:
+      return "_";
+    case NamingType.DOT:
+      return ".";
+    default:
+      return "";
+  }
+}

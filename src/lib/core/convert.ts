@@ -1,5 +1,5 @@
 import { NamingType } from "@/enums/naming-type.enum";
-import { getSplittedInputs } from "./input";
+import { autoConvert, getSplittedInputs } from "./input";
 import { getConvertedText } from "./output";
 
 export function convert(text: string, from: NamingType, to: NamingType) {
@@ -14,6 +14,11 @@ export function convertFromInput(
   to: NamingType
 ) {
   return inputs.map((input) => {
+    if (from === NamingType.AUTO) {
+      const output = autoConvert(input, to);
+      return output;
+    }
+
     const splittedInputs = getSplittedInputs(input, from);
 
     if (!splittedInputs.length) return input;

@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from "lucide-react";
-import { useTheme } from "./theme-provider";
+import { useTheme } from "../theme-provider";
 
 export function Header() {
   const { setTheme } = useTheme();
