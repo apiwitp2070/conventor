@@ -173,6 +173,7 @@ function App() {
                     items={inputOptions}
                   />
                   <Button
+                    disabled={inputType === NamingType.AUTO}
                     variant="secondary"
                     onClick={(e) => {
                       e.preventDefault();
