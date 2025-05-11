@@ -5,6 +5,7 @@ Conventor is a simple and efficient tool for converting one or more text between
 ## Features
 
 - **Supports Following Naming Conventions:**
+  - Auto
   - kebab-case
   - camelCase
   - PascalCase
@@ -13,6 +14,9 @@ Conventor is a simple and efficient tool for converting one or more text between
   - dot.case
 - Real-time updates as you type.
 - Convert multiple words at once. One line per name.
+
+Auto convert will replace all non-alphabet letter with desired outout convention,
+while the others will converting based on separator related to input type while leave other symbol as is.
 
 ## Installation (For Developers)
 
