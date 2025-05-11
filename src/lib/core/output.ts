@@ -61,7 +61,7 @@ export function defaultConvert(text: string) {
 // helper function
 
 function convertCamel(text: string) {
-  const letterIdx = text.search(/[a-zA-Z]/);
+  const letterIdx = text.search(/\p{L}/u);
 
   if (letterIdx < 0) return text;
 

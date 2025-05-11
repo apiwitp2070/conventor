@@ -20,23 +20,38 @@ export function getSplittedInputs(input: string, from: NamingType) {
 }
 
 export function splitKebabCase(str: string) {
-  return str.split("-");
+  const separator = "-";
+
+  if (str.startsWith(separator)) {
+    return str.slice(1).split(separator);
+  }
+  return str.split(separator);
 }
 
 export function splitCamelCase(str: string) {
-  return str.replace(/(.)([A-Z])/g, "$1 $2").split(" ");
+  return splitCamelStr(str);
 }
 
 export function splitPascalCase(str: string) {
-  return str.replace(/(.)([A-Z])/g, "$1 $2").split(" ");
+  return splitCamelStr(str);
 }
 
 export function splitSnakeCase(str: string) {
-  return str.split("_");
+  const separator = "_";
+
+  if (str.startsWith(separator)) {
+    return str.slice(1).split(separator);
+  }
+  return str.split(separator);
 }
 
 export function splitDotCase(str: string) {
-  return str.split(".");
+  const separator = ".";
+
+  if (str.startsWith(separator)) {
+    return str.slice(1).split(separator);
+  }
+  return str.split(separator);
 }
 
 export function autoFormatInput(from: NamingType, input: string) {
@@ -53,3 +68,11 @@ export function autoFormatInput(from: NamingType, input: string) {
       return input;
   }
 }
+
+// helper
+
+const splitCamelStr = (str: string) => {
+  return str
+    .split(/(?=[A-Z])/)
+    .flatMap((part) => (/^[A-Z]{2,}$/.test(part) ? part.split("") : [part]));
+};
